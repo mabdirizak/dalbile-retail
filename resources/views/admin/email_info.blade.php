@@ -37,34 +37,15 @@
                 @csrf
 
                 <div class="mb-3 pl-9 pt-7">
-                    <label for="" class="">Email Greeting: </label>
-                    <input class="text-dark" type="text" name="greeting">
+                    <label for="header" class="">Email Header: </label>
+                    <input class="text-dark" type="text" name="header">
                 </div>
 
                 <div class="mb-3 pl-9 pt-7">
-                    <label for="" class="">Email FirstLine: </label>
-                    <input class="text-dark" type="text" name="firstline">
+                    <label for="body" class="">Email Body: </label>
+                    <textarea id="body" name="body"></textarea>
                 </div>
 
-                <div class="mb-3 pl-9 pt-7">
-                    <label for="" class="">Email Body: </label>
-                    <input class="text-dark" type="text" name="body">
-                </div>
-
-                <div class="mb-3 pl-9 pt-7">
-                    <label for="" class="">Email Button Name: </label>
-                    <input class="text-dark" type="text" name="button">
-                </div>
-
-                <div class="mb-3 pl-9 pt-7">
-                    <label for="" class="">Email Url: </label>
-                    <input class="text-dark" type="text" name="url">
-                </div>
-
-                <div class="mb-3 pl-9 pt-7">
-                    <label for="" class="">Email lastline: </label>
-                    <input class="text-dark" type="text" name="lastline">
-                </div>
 
                 <div class="mb-3">
                    <input type="submit" value="send email" class="btn btn-primary">

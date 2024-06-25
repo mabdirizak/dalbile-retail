@@ -285,12 +285,9 @@ class AdminController extends Controller
             $order=Order::find($id);
 
         $details = [
-            'greeting' =>$request->greeting,
-            'firstline'=>$request->firstline,
-            'body'     =>$request->body,
-            'button'   =>$request->button,
-            'url'      =>$request->url,
-            'lastline' =>$request->lastline,
+            'header' =>$request->header,
+           
+            'body' =>$request->body
         ];
 
         Notification::send($order, new SendEmailNotification($details));

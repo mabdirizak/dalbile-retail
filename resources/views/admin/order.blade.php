@@ -47,7 +47,7 @@
                     <th>Delivery Status</th>
                     <th>Image</th>
                     <th>Delivered</th>
-                    <th>Print as PDF</th>
+                   
                     <th>Send email</th>
                 </tr>
 
@@ -76,9 +76,7 @@
                         @endif
                     </td>
 
-                    <td>
-                        <a href="{{url('print_pdf', $order->id)}}" class="btn btn-secondary">PDF</a>
-                    </td>
+                    
                     
                     <td>
                       <a href="{{url('send_email', $order->id)}}" class="btn btn-primary">Send email</a>

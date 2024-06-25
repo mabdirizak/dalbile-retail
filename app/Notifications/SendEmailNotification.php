@@ -36,12 +36,16 @@ class SendEmailNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage)
-        ->greeting($this-›details[ 'greeting'])
-        ->line($this-›details['firstline'])
-        ->line($this-›details[ 'body' ])
-        ->action($this-›details[ 'button'] , $this->details['url'])
-        ->line($this-›details['lastline']);
+        $mailMessage = (new MailMessage)
+            ->subject($this->details['header'])  // Setting the email subject
+            ->line($this->details['body']);      // Setting the email body
+        
+        // Optional: If you have an action button with URL
+        if (isset($this->details['button']) && isset($this->details['url'])) {
+            $mailMessage->action($this->details['button'], $this->details['url']);
+        }
+
+        return $mailMessage;
     }
 
     /**
