@@ -95,7 +95,7 @@
  <!--Comment and reply section ends-->
 
       <div class="cpy_">
-         <p class="mx-auto">© 2024 All Rights Reserved By <a href="https://github.com/maxamedamin/">RMS</a><br>
+         <p class="mx-auto">© 2024 All Rights Reserved By <a href="https://github.com/mabdirizak/">RMS</a><br>
          </p>
       </div>
 
