@@ -117,7 +117,7 @@
       @include('home.footer')
       <!-- footer end -->
       <div class="cpy_">
-         <p class="mx-auto">© 2024 All Rights Reserved By <a href="https://github.com/mabdirizak/" target="_blank">RMS</a><br>
+         <p class="mx-auto">© 2024 All Rights Reserved By <a href="https://github.com/mabdirizak/dalbile-retail" target="_blank">RMS</a><br>
          </p>
       </div>
 

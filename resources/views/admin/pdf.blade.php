@@ -3,23 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Order Details</title>
     <base href="/public">
 </head>
 <body>
-    <h1 class="text-center text-info">Order Details</h1>
-    Client Name:<h3>{{$order->name}}</h3>
-    Client Email:<h3>{{$order->email}}</h3>
-    Client: Phone:<h3>{{$order->phone}}</h3>
-    Client Address:<h3>{{$order->address}}</h3>
+    <style>
+        @page {
+            size: A4; /* Set page size */
+            margin: 1cm; /* Adjust page margins */
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 5px 0;
+            font-size: 12px; /* Smaller font size for print */
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 4px; /* Adjusted padding for smaller screens */
+            text-align: left;
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+        th {
+            background-color: #f2f2f2;
+            color: black;
+            font-weight: normal; /* Reduce font weight for headers */
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .text-white {
+            color: #000;
+        }
 
-    Product Name:<h3>{{$order->product_title}}</h3>
-    Qauntity:<h3>{{$order->quantity}}</h3>
-    Price:<h3>{{$order->price}}</h3>
-    Payment Status:<h3>{{$order->payment_status}}</h3>
-    Delivery Status:<h3>{{$order->delivery_status}}</h3>
-    <br><br>
-    <!--the image is not visible, solve this-->
-    Image:<img height="250" width="450" src="product/{{$order->image}}">
+        /* Hide non-essential columns for printing */
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+    
+
+    <table class="table small-table m-auto pb-3">
+        <thead>
+            <tr class="text-info m-auto">
+                <th>Client Name</th>
+                <th>Client Email</th>
+                <th>Client Phone</th>
+                <th>Client Address</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Payment Status</th>
+                <th>Delivery Status</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr class="text-white">
+                    <td>{{ $order->name }}</td>
+                    <td>{{ $order->email }}</td>
+                    <td>{{ $order->phone }}</td>
+                    <td>{{ $order->address }}</td>
+                    <td>{{ $order->product_title }}</td>
+                    <td>{{ $order->quantity }}</td>
+                    <td>{{ $order->price }}</td>
+                    <td>{{ $order->payment_status }}</td>
+                    <td>{{ $order->delivery_status }}</td>
+                </tr>
+           
+        </tbody>
+    </table>
+    
+
 </body>
 </html>

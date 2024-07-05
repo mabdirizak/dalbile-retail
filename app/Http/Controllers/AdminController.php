@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+
 use App\Models\Product;
 
 use App\Models\Category;
 use App\Models\User;
-use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade\pdf as PDF;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
@@ -252,8 +253,15 @@ class AdminController extends Controller
         if(Auth::id() && Auth::User()->usertype == 1)
         {
             $order=Order::find($id);
-      $pdf=PDF::loadView('admin.pdf', compact('order'));
-      return $pdf->download('order_details.pdf');
+    //   $pdf=PDF::loadView('admin.pdf', $order);
+    //   return $pdf->download('order_details.pdf');
+          // Pass the order to the view as part of an array
+          if (!$order) {
+            return redirect()->back()->with('error', 'Order not found');
+        }
+
+          $pdf = PDF::loadView('admin.pdf', compact('order')); 
+          return $pdf->download('order_details.pdf');
         }
         else
         {

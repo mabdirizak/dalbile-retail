@@ -35,7 +35,7 @@
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>Payment Status</th>
-                    <th>Delivery_Status</th>
+                    <th>Delivery Status</th>
                     <th>Image</th>
                     <th>Action</th>
 

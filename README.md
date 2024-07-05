@@ -24,6 +24,9 @@ This repository contains the source code for our University graduation project, 
     Run migrations and seeders: php artisan migrate --seed
     Serve the application: php artisan serve
 
+### Download the thesis book here
+You can download the thesis book as PDF here (https://drive.google.com/file/d/18WCpKEKGx53A2-EEyeFGpLyuH-c2ycIZ/view?usp=drive_link)
+
 ### License:
 
 This project is licensed under the MIT License.

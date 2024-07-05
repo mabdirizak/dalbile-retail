@@ -47,8 +47,12 @@
                     <th>Delivery Status</th>
                     <th>Image</th>
                     <th>Delivered</th>
+
+                    
                    
                     <th>Send email</th>
+
+                    <th>Print PDF</th>
                 </tr>
 
                 @forelse($order as $order)
@@ -80,6 +84,10 @@
                     
                     <td>
                       <a href="{{url('send_email', $order->id)}}" class="btn btn-primary">Send email</a>
+                    </td>
+
+                    <td>
+                        <a href="{{url('print_pdf', $order->id)}}" class="btn btn-secondary">Print</a>
                     </td>
                 </tr>
 

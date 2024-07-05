@@ -34,19 +34,13 @@
                            <a class="nav-link" href="{{url('show_order')}}">Order</a>
                         </li>
 
-                        <form class="form-inline">
-                           <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                           <i class="fa fa-search" aria-hidden="true"></i>
-                           </button>
-                        </form>
-
-
+                      
 
                         @if (Route::has('login'))
 
                         @auth 
                         <li class="nav-item">
-                           <a href="{{ route('logout') }}"
+                           <a href="{{ route('logout') }}" class="btn btn-secondary"
                            onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

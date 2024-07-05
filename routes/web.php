@@ -80,7 +80,7 @@ Route::middleware([
 
 
     //Home
-    route::get('/redirect', [HomeController::class, 'redirect']);
+    route::get('/redirect', [HomeController::class, 'redirect'])->middleware('auth','verified');
 
     route::get('/product_details/{id}', [HomeController::class, 'product_details']);
 
