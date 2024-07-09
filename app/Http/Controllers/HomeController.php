@@ -180,6 +180,14 @@ class HomeController extends Controller
 
         foreach($data as $data)
         {
+            
+
+
+
+
+
+
+
             $order= new Order;
             //1. $order->(name) coming from orders table      2. $data->(name) coming from cart table. 
             $order->name=$data->name;

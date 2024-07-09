@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller;
 use App\Notifications\SendEmailNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\DB; 
 
 class AdminController extends Controller
 {
@@ -425,7 +426,29 @@ class AdminController extends Controller
         {
             return redirect('login');
         }
+
         
+        
+    }
+
+    public function dailyReport()
+    {
+        $dailyOrders = DB::table('orders')
+        ->select(DB::raw('DATE(created_at) as date'), DB::raw('SUM(CAST(price AS DECIMAL(10, 2)) * CAST(quantity AS UNSIGNED)) as total_sales'))
+        ->groupBy(DB::raw('DATE(created_at)', ))
+        ->get();
+        
+        return view('admin.daily', compact('dailyOrders'));
+    }
+
+    public function monthlyReport()
+    {
+        $monthlyOrders = DB::table('orders')
+    ->select(DB::raw('YEAR(created_at) as year'), DB::raw('MONTH(created_at) as month'), DB::raw('SUM(CAST(price AS DECIMAL(10, 2)) * CAST(quantity AS UNSIGNED)) as total_sales'))
+    ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
+    ->get();
+        
+        return view('admin.monthly', compact('monthlyOrders'));
     }
 }
 

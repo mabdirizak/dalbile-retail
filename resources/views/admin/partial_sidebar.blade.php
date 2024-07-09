@@ -35,10 +35,10 @@
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
+                <i class="bi bi-box"></i>
               </span>
               <span class="menu-title">Products</span>
-              <i class="menu-arrow"></i>
+              <i class="bi bi-box"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
@@ -64,6 +64,24 @@
               <span class="menu-title">Order</span>
             </a>
           </li>
+
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="bi bi-calendar-day"></i>
+              </span>
+              <span class="menu-title">Reports</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{url('/reports/daily')}}">Daily Reports</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/reports/monthly')}}">Monthly Reports</a></li>
+              </ul>
+            </div>
+          </li>
+
+        
           
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{url('/view_user')}}">

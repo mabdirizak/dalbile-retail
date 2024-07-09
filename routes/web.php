@@ -75,6 +75,9 @@ Route::middleware([
 
     route::get('/search', [AdminController::class, 'searchdata']);
 
+    Route::get('/reports/daily', [AdminController::class, 'dailyReport'])->name('admin.reports.daily');
+
+    Route::get('/reports/monthly', [AdminController::class, 'monthlyReport'])->name('admin.reports.monthly');
 
 
 
